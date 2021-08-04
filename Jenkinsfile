@@ -37,12 +37,12 @@ stages {
   stage('Results') {
       steps {
       junit '**/target/surefire-reports/TEST-*.xml'
-      archiveArtifacts 'web/target/*.war'
+      archiveArtifacts '/var/lib/jenkins/workspace/timekeeper/web/target'
       }
  }
      stage('Artifact upload') {
       steps {
-     nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'web/target/*.war']], mavenCoordinate: [artifactId: 'time-tracker-parent', groupId: 'training.taylor.time-tracker', packaging: 'war', version: '$BUILD_NUMBER']]]
+     nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/timekeeper/web/target']], mavenCoordinate: [artifactId: 'time-tracker-parent', groupId: 'training.taylor.time-tracker', packaging: 'war', version: '$BUILD_NUMBER']]]
       }
  }
      stage('Deploy War') {
