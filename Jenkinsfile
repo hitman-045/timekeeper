@@ -37,7 +37,7 @@ stages {
   stage('Results') {
       steps {
       junit '**/target/surefire-reports/TEST-*.xml'
-      archiveArtifacts 'target/*.war'
+      //archiveArtifacts 'target/*.war'
       }
  }
      stage('Artifact upload') {
