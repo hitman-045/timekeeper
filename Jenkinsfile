@@ -42,7 +42,7 @@ stages {
  }
      stage('Artifact upload') {
       steps {
-     nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: 'target/timekeeper.war']], mavenCoordinate: [artifactId: 'time-tracker-parent', groupId: 'training.taylor.time-tracker', packaging: 'war', version: '$BUILD_NUMBER']]]
+     nexusPublisher nexusInstanceId: '1234', nexusRepositoryId: 'releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/lib/jenkins/workspace/timekeeper-pipeline/pom.xml']], mavenCoordinate: [artifactId: 'time-tracker-parent', groupId: 'training.taylor.time-tracker', packaging: 'war', version: '$BUILD_NUMBER']]]
       }
  }
      stage('Deploy War') {
