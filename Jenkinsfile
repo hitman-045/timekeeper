@@ -12,7 +12,7 @@ stages {
 
       // Get some code from a GitHub repository
 
-      git 'https://github.com/sumanthsainooka/timekeeper.git'
+      git 'https://github.com/hitman-045/timekeeper.git'
       // Get the Maven tool.
      
  // ** NOTE: This 'M3' Maven tool must be configured
